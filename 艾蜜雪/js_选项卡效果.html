@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+				list-style: none;
+			}
+			html,body{
+				overflow: hidden;
+				width:100%;
+			}
+			ul{float: left;
+			}
+			li{
+				width:200px ;
+				line-height: 80px;
+				background:red;
+				color: white;
+				text-align: center;
+				cursor: pointer;
+				border:1px solid #000;
+			}
+			li.active{
+				background: blue;
+			}
+			.box div{
+				float: left;
+				width: 543px;
+    			height: 328px;
+    			background: yellow;
+				text-align: justify;
+				text-indent: 2rem;
+				border:1px solid yellowgreen;
+				display: none;
+				
+			}
+			div.active{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li sg="0" class="active">房子</li>
+			<li sg="1">别墅</li>
+			<li sg="2">小区</li>
+			<li sg="3">公租房</li>
+		</ul>
+		<div class="box" id="bibox">
+			<div  class="active ">
+				房子IT之家10月16日消息 北京时间今日上午，拳头游戏全球直播期十周年特别版的《别闹了，拳头》以及展开系列活动。《英雄联盟》新英雄赛娜也确认将于9.22版本正式亮相，官方在直播中也说到在10月29日测试服登场。
+			</div>
+			<div  >
+				别墅IT之家10月16日消息 北京时间今日上午，拳头游戏全球直播期十周年特别版的《别闹了，拳头》以及展开系列活动。《英雄联盟》新英雄赛娜也确认将于9.22版本正式亮相，官方在直播中也说到在10月29日测试服登场。
+			</div>
+			<div >
+				小区IT之家10月16日消息 北京时间今日上午，拳头游戏全球直播期十周年特别版的《别闹了，拳头》以及展开系列活动。《英雄联盟》新英雄赛娜也确认将于9.22版本正式亮相，官方在直播中也说到在10月29日测试服登场。
+			</div>
+			<div >
+				公租房IT之家10月16日消息 北京时间今日上午，拳头游戏全球直播期十周年特别版的《别闹了，拳头》以及展开系列活动。《英雄联盟》新英雄赛娜也确认将于9.22版本正式亮相，官方在直播中也说到在10月29日测试服登场。
+			</div>
+		</div>
+		<script type="text/javascript">
+			var lis=document.getElementsByTagName("li");
+			var divs=document.getElementsByTagName("div")[0];
+			var dic=divs.getElementsByTagName("div")
+			for(var i=0;i<lis.length;i++){
+				lis[i].onclick=function(){
+					for(var i=0;i<lis.length;i++){
+						lis[i].className="";
+						dic[i].className=" ";
+					}
+					this.className="active";
+					var i=this.getAttribute("sg");
+					dic[i].className="active";
+				}
+			}
+		</script>
+	</body>
+</html>
